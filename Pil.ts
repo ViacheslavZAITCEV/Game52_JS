@@ -1,29 +1,31 @@
-import types from './types'
 import Carte from './Carte'
 
 
 interface Pile {
 	newPil: () => void;
 	mixerPil: () => void;
-	getPil: () => [Carte];
+	getPil: () => Carte[];
 }
 
-class Pil {
+class Pil implements Pile {
+
+	pil: Carte[];
+
 	constructor() {
-		this.pil: [Carte] = []
-		this.newPil()
+		this.pil = this.newPil()
 		this.mixerPil()
 	}
-	// pil: [Carte] = []
 	VALEURS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Valet', 'Reine', 'Roi', 'As']
 	COLEURS = ['trèfle', 'pique', 'coeur', 'carreau']
 
 	newPil() {
+		let newPile = [];
 		for (var i = 0; i < 12; i++) {
 			for (var j = 0; j < 3; j++) {
-				this.pil.push(new Carte(this.VALEURS[i], this.COLEURS[j]))
+				newPile.push(new Carte(this.VALEURS[i], this.COLEURS[j]))
 			}
 		}
+		return newPile
 	}
 
 	mixerPil() {
