@@ -1,9 +1,9 @@
 export default class Carte {
 
-	valeur: string;
-	couleur: string;
+	// valeur: string;
+	// couleur: string;
 
-	constructor(valeur: string, couleur: string) {
+	constructor(valeur, couleur) {
 		this.valeur = valeur;
 		this.couleur = couleur;
 	}

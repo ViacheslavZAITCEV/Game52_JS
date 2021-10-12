@@ -1,15 +1,15 @@
-import Carte from './Carte'
+import Carte from '../Carte/index.mjs'
+
+// interface Pile {
+// 	newPil: () => void;
+// 	mixerPil: () => void;
+// 	getPil: () => Carte[];
+// }
 
 
-interface Pile {
-	newPil: () => void;
-	mixerPil: () => void;
-	getPil: () => Carte[];
-}
+export class Pil {
 
-class Pil implements Pile {
-
-	pil: Carte[];
+	// pil: Carte[];
 
 	constructor() {
 		this.pil = this.newPil()
@@ -30,8 +30,10 @@ class Pil implements Pile {
 
 	mixerPil() {
 		let pilmix = [];
-		for (var i = 0; i < this.pil.length; i++) {
-			var random = Math.random() * this.pil.length;
+		const pilLength = this.pil.length
+		for (var i = 0; i < pilLength; i++) {
+			var random = parseInt(Math.random() * this.pil.length);
+
 			pilmix.push(this.pil[random])
 			this.pil.splice(random, 1)
 		}
@@ -43,5 +45,3 @@ class Pil implements Pile {
 	}
 
 }
-
-export default Pil
