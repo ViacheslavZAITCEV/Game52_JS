@@ -1,28 +1,18 @@
 import Carte from '../Carte/index.mjs'
 
-// interface Pile {
-// 	newPil: () => void;
-// 	mixerPil: () => void;
-// 	getPil: () => Carte[];
-// }
-
 
 export class Pil {
 
-	// pil: Carte[];
-
-	constructor() {
-		this.pil = this.newPil()
+	constructor(valeur, couleur) {
+		this.pil = this.newPil(valeur, couleur)
 		this.mixerPil()
 	}
-	VALEURS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Valet', 'Reine', 'Roi', 'As']
-	COLEURS = ['trèfle', 'pique', 'coeur', 'carreau']
 
-	newPil() {
+	newPil(valeur, couleur) {
 		let newPile = [];
-		for (var i = 0; i < 12; i++) {
-			for (var j = 0; j < 3; j++) {
-				newPile.push(new Carte(this.VALEURS[i], this.COLEURS[j]))
+		for (var i = 0; i < valeur.length; i++) {
+			for (var j = 0; j < couleur.length; j++) {
+				newPile.push(new Carte(valeur[i], couleur[j]))
 			}
 		}
 		return newPile
@@ -43,5 +33,9 @@ export class Pil {
 	getPil() {
 		return this.pil
 	}
+
+	// typePil() {
+	// 	return this.pil.forEach(carte => carte.toString());
+	// }
 
 }
