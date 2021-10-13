@@ -4,7 +4,7 @@ import Carte from '../Carte/index.mjs'
 export class Cards {
 
 	constructor(valeur, couleur) {
-		console.log('valeur=', valeur)
+		// console.log('valeur=', valeur)
 		this.pil = this.newPil(valeur, couleur)
 		this.mixerPil()
 	}

@@ -12,6 +12,13 @@ export class Player {
 		return card
 	}
 
+	addCard(cards) {
+		// console.log(this.name, 'a ', this.cards.length, 'cards')
+		// console.log(this.cards)
+		this.cards.push(...cards)
+		console.log(this.name, 'prend les cartes: ', ...cards.map(c => c.toString() + ', '), '. En total', this.name == 'Katty' ? 'elle' : 'il', 'a ', this.cards.length, 'cards')
+		// console.log(this.cards)
+	}
 
 
 }

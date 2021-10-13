@@ -19,17 +19,28 @@ const PLAYERS = ['John', 'Robert', 'Max', 'Katty']
 
 const game = new Game(PLAYERS)
 console.log(' \n Joueurs:')
-console.log(game.cards)
-console.log(game.players)
+// console.log(game.cards)
+console.log(PLAYERS.forEach(p => p))
 
 
 console.log(' \n DISTRIBUTION \n')
 const res = game.distributionAllCrds()
-console.log('res', res)
-console.log(game.cards)
-console.log(game.players)
+// console.log('res', res)
+// console.log(game.cards)
+// console.log(game.players)
 
-console.log(game.getPli())
+for (var i = 0; i < 13; i++) {
+
+	game.tour()
+}
+
+game.players.forEach(player => {
+	console.log(player.name, ' a ', player.cards.length, ' cards')
+});
+
+
+
+
 
 
 
